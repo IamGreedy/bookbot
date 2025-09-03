@@ -9,19 +9,19 @@ def get_book_text(path_to_file):
 
 
 def main():
-    if len(sys.argv) !=2:
+    if len(sys.argv) !=2: #sys.argv permet de donner les arguments directment dans le terminal
         print ("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
 
-    path_to_file = sys.argv[1]
+    path_to_file = sys.argv[1] #path to file correspond au premier argument, l'argument 0 étant main.py
     text = get_book_text(path_to_file)
     
-    #calcul des stats
-    num_words = number_of_words(text)
+    #calcul des stats ; on reprend les fonctions de stats
+    num_words = number_of_words(text) 
     num_characters = number_of_characters(text)
     letters=char_dict_to_sorted_list(num_characters)
     
-    #Impression formatée
+    #Impression formatée ; mise en page
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {path_to_file}")
     print("----------- Word Count ----------")
